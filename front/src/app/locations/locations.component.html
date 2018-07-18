@@ -1,0 +1,16 @@
+<section>
+  <ul class="">
+    <app-location *ngFor="let location of locations, let i = index"                
+                  [nbrePers] ="location.nbrePers"
+                  [id] ="location.id"
+                  [descriptionShort] ="location.descriptionShort"
+                  [source] = "locations[i].pictures[0].src">
+    </app-location>
+  </ul>
+
+</section>
+<!-- 
+  class = list-group
+[index] = "i"
+
+-->

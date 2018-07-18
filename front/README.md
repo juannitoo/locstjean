@@ -25,3 +25,9 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+
+## security
+
+need to update hoek in package-lock.json to ~> 4.2.1 from 2.16.3
+line 1409, 4574, 4595, 8760

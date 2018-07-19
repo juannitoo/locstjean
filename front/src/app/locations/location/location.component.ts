@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-location',
@@ -18,11 +18,14 @@ export class LocationComponent implements OnInit {
   idArecup: string;
 
 
-  constructor( private route: ActivatedRoute ) {  }
+  constructor(  ) {  }
 
   ngOnInit() {
-    this.idArecup = this.route.snapshot.params['id'];
+
   }
 
+  onClick() {
+    console.log('click');
+  }
 
 }

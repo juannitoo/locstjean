@@ -43,8 +43,8 @@ export class LocationsService {
 
     getLocationById(id: number) {
       const location = this.locations.find(
-        (s) => {
-          return s.id === id;
+        (element) => {
+          return element.id === id;
         }
       );
       return location;

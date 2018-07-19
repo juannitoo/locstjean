@@ -6,5 +6,7 @@
       {{ coordGeo }} <br>
       <img src= "{{ source }}" />
     </p>
-    <button routerLink="locations/:id" class="btn btn-primary">En savoir plus</button>
+    <button [routerLink]="[id]" 
+            class="btn btn-primary" 
+            (click)="onClick()">En savoir plus</button>
 </li>

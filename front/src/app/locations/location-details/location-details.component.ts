@@ -7,14 +7,8 @@ import { LocationsService } from '../../services/locations.services';
   templateUrl: './location-details.component.html',
   styleUrls: ['./location-details.component.css']
 })
-export class LocationDetailsComponent implements OnInit {
 
-  // @Input() index: number;
-  // @Input() nbrePers: string;
-  // @Input() id: string;
-  // @Input() description: string;
-  // @Input() coordGeo: string;
-  // @Input() source: string;
+export class LocationDetailsComponent implements OnInit {
 
   paramId: number;
   id: number;

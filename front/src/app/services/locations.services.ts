@@ -44,6 +44,7 @@ export class LocationsService {
       description: ' bla bla bla',
       coordGeo : [ 128, 223 ]
     }
+
   ];
 
   getLocationById(id: number) {

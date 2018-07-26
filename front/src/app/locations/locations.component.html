@@ -1,4 +1,6 @@
 <section>
+
+
   <ul class="">
     <app-location *ngFor="let location of locations, let i = index"                
                   [nbrePers] ="location.nbrePers"
@@ -7,4 +9,8 @@
                   [source] = "locations[i].pictures[0].src">
     </app-location>
   </ul>
+
+  <button routerLink="/add-location" 
+  class="btn btn-primary">Ajoutez une location</button>
+
 </section>

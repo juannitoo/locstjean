@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { LocationsService } from '../services/locations.services';
 import { Subscription } from 'rxjs';
 
@@ -8,7 +8,7 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./locations.component.css']
 })
 
-export class LocationsComponent implements OnInit {
+export class LocationsComponent implements OnInit, OnDestroy {
 
   locations: any[];
   locationsSubscription: Subscription;
@@ -25,6 +25,10 @@ export class LocationsComponent implements OnInit {
     );
 
     this.locationsService.emitLocationsSubject();
+  }
+
+  ngOnDestroy() {
+    this.locationsSubscription.unsubscribe();
   }
 
 

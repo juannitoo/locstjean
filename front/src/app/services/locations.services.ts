@@ -1,5 +1,10 @@
+import { Subject } from 'rxjs/Subject';
+
 export class LocationsService {
-  locations = [
+
+  locationsSubject = new Subject<any[]>();
+
+  private locations = [
     { id: 1,
       pictures: [ {src : '../assets/images/jon_photos/salon2_mini.jpg'},
                 {src : 'src'},

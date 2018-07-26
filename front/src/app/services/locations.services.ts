@@ -1,4 +1,4 @@
-import { Subject } from 'rxjs/Subject';
+import { Subject } from 'rxjs';
 
 export class LocationsService {
 
@@ -53,6 +53,10 @@ export class LocationsService {
       }
     );
     return location;
+  }
+
+  emitLocationsSubject() {
+    this.locationsSubject.next(this.locations.slice());
   }
 
 }

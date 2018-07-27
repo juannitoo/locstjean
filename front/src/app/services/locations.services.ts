@@ -60,4 +60,9 @@ export class LocationsService {
     this.locationsSubject.next(this.locations.slice());
   }
 
+  addLocation(location: Location) {
+    this.locations.push(location);
+    this.emitLocationsSubject();
+  }
+
 }

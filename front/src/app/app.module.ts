@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { ReactiveFormsModule } from '@angular/forms';
 
 // components
 import { AppComponent } from './app.component';
@@ -9,6 +10,7 @@ import { AuthComponent } from './auth/auth.component';
 import { LocationsComponent } from './locations/locations.component';
 import { LocationComponent } from './locations/location/location.component';
 import { LocationDetailsComponent } from './locations/location-details/location-details.component';
+import { LocationAddComponent } from './locations/location-add/location-add.component';
 import { ContratComponent } from './contrat/contrat.component';
 import { EtatComponent } from './etat/etat.component';
 import { FourOhFourComponent } from './four-oh-four/four-oh-four.component';
@@ -22,6 +24,7 @@ import { AuthService } from './services/auth.services';
 
 const appRoutes: Routes = [
   { path: 'locations', component: LocationsComponent },
+  { path: 'locations/ajouter', component: LocationAddComponent },
   { path: 'locations/:id', component: LocationDetailsComponent },
   { path: 'contrat', component: ContratComponent },
   { path: 'etat-des-lieux', component: EtatComponent },
@@ -42,11 +45,14 @@ const appRoutes: Routes = [
     HomeComponent,
     HeaderComponent,
     LocationComponent,
-    LocationDetailsComponent
+    LocationDetailsComponent,
+    LocationAddComponent
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [ AuthService, LocationsService ],
   bootstrap: [AppComponent]

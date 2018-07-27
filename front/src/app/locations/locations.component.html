@@ -2,7 +2,7 @@
 
 
   <ul class="">
-    <app-location *ngFor="let location of locations, let i = index"                
+    <app-location *ngFor="let location of locations, let i = index"
                   [nbrePers] ="location.nbrePers"
                   [id] ="location.id"
                   [descriptionShort] ="location.descriptionShort"
@@ -10,7 +10,7 @@
     </app-location>
   </ul>
 
-  <button routerLink="/add-location" 
+  <button routerLink="/locations/ajouter"
   class="btn btn-primary">Ajoutez une location</button>
 
 </section>

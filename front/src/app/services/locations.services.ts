@@ -1,4 +1,5 @@
 import { Subject } from 'rxjs';
+import { Location } from '../models/Location.model';
 
 export class LocationsService {
 

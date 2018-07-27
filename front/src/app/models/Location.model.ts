@@ -3,7 +3,7 @@ export class Location {
     public id: number,
     public pictures: any[],
     public nbrePers: string,
-    public descriptionShort: any[],
+    public descriptionShort: string,
     public description: string,
     public coordGeo: number[]
   ) {}

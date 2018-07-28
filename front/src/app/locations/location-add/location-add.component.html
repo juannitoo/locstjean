@@ -2,32 +2,44 @@
   location-add works!
 </p>
 
-<form>
+<div>
+  <form (ngSubmit)="onSubmit()" [formGroup]="locationForm">
 
-  <label for="nbre-pers">
-    Location pour combien de personne maximum ?
-  </label>
-  <input type="text" /> <br />
+    <div class="form-group">
+    <label for="nbre-pers">
+      Location pour combien de personne maximum ?
+    </label>
+    <input type="text" id="nbre-pers" class="form-control"
+    formControlName="nbrePers"></div>
 
-  <label for="description-short">
-      description courtes
-  </label>
-  <input type="textarea" /> <br />
+    <div class="form-group">
+    <label for="description-short">
+        description courtes
+    </label>
+    <textarea id="description-short" class="form-control"
+    formControlName="descriptionShort" rows="2"> </textarea></div>
 
-  <label for="description">
-      description longues
-  </label>
-  <input type="textarea" /> <br />
+    <div class="form-group">
+    <label for="description">
+        description longues
+    </label>
+    <textarea id="description" class="form-control"
+    formControlName="description" rows="2"> </textarea></div>
 
-  <label for="coord-geo">
-      coord geo
-  </label>
-  <input type="text" /> <br />
+    <div class="form-group">
+    <label for="coord-geo">
+        coord geo
+    </label>
+    <input type="text" id="coord-geo" class="form-control"
+    formControlName="coordGeo"> </div>
 
-  <label for="photos">
-      photo
-  </label>
-  <input type="file" /> <br />
+    <div class="form-group">
+    <label for="photos">
+        photo
+    </label>
+    <input type="file" id="photos" class="form-control"
+    formControlName="photos"/> </div>
 
-
-</form>
+    <button class="btn btn-primary" type="submit">Enregistrer</button>
+  </form>
+</div>

@@ -57,6 +57,18 @@ export class LocationsService {
     return location;
   }
 
+  getNewId() {
+    return this.locations.length + 2;
+  }
+
+  setCoord() {
+    return [152, 225];
+  }
+
+  setPictures(picture) {
+
+  }
+
   emitLocationsSubject() {
     this.locationsSubject.next(this.locations.slice());
   }

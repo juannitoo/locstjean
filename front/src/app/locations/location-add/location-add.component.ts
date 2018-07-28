@@ -27,7 +27,7 @@ export class LocationAddComponent implements OnInit {
       descriptionShort: '',
       description: '',
       coordGeo: '',
-      picture: []
+      pictures: []
     });
   }
 
@@ -35,15 +35,18 @@ export class LocationAddComponent implements OnInit {
     const formValue = this.locationForm.value;
     const id = this.locationsService.getNewId();
     const coord = this.locationsService.setCoord();
-    const pictures = { src: formValue['picture'] };
+    const pictures = [{ src: '../../assets/images/genie.jpg' }];
     const newLoc = new Location(
       id,
       formValue['nbrePers'],
       formValue['descriptionShort'],
       formValue['description'],
       coord,
-      { 'src': formValue['picture'] }
+      pictures
     );
+    console.log(newLoc);
+    this.locationsService.addLocation(newLoc);
+    this.router.navigate(['/locations']);
   }
 
 }

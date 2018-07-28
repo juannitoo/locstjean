@@ -58,7 +58,21 @@ export class LocationsService {
   }
 
   getNewId() {
-    return this.locations.length + 2;
+    const tableauId = [];
+    let id;
+    // je récupère les id des locations
+    for (let i = 0; i < this.locations.length; i++) {
+        tableauId.push(this.locations[i].id);
+    }
+    // et je les compare pour inclure les 1er dispo
+    for (let i = 1; i <= this.locations.length + 1; i++) {
+        if (tableauId.includes(i)) {
+            continue;
+        } else {
+            id = i;
+        }
+    }
+    return id;
   }
 
   setCoord() {
@@ -75,6 +89,7 @@ export class LocationsService {
 
   addLocation(location: Location) {
     this.locations.push(location);
+    console.log(this.locations);
     this.emitLocationsSubject();
   }
 

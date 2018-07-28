@@ -5,6 +5,6 @@ export class Location {
     public descriptionShort: string,
     public description: string,
     public coordGeo: number[],
-    public pictures: {}
+    public pictures: any
   ) {}
 }

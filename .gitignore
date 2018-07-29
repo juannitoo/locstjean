@@ -1,0 +1,17 @@
+# compiled output
+/front/dist
+/front/tmp
+/front/out-tsc
+
+# dependencies
+/back/node_modules
+/front/node_modules
+
+# assets
+/front/src/assets
+
+# others
+/front/e2e
+/front/npm-debug.log
+/front/testem.log
+/front/typings

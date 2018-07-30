@@ -1,28 +1,18 @@
-
-//L'application requiert l'utilisation du module Express.
-//La variable express nous permettra d'utiliser les fonctionnalités du module Express.  
+// La variable express permet d'utiliser les fonctionnalités du module Express.  
 var express = require('express'); 
+var app = express();
 
-// Nous définissons ici les paramètres du serveur.
+// paramètres du serveur.
 var hostname = 'localhost'; 
 var port = 3000; 
 
-var app = express();
-// var router = express.router();
+//importation du fichier de route
+var router = require('./routes.js');
 
-// var router = require('./routes.js');
-var router = express.Router();
-
-// home
-router.get('/', function (req, res) {
-    res.send('Hello World! router ');
-
-});
+// affichage selon la route
 app.use('/', router);
-// 1er affichage
-// app.get('/', function (req, res) {
-//     res.send('Hello World!')
-// })
+app.use('/locations', router);
+
 
 // Démarrer le serveur 
 app.listen(port, hostname, function(){

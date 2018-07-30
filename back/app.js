@@ -7,12 +7,22 @@ var express = require('express');
 var hostname = 'localhost'; 
 var port = 3000; 
 
-var app = express(); 
+var app = express();
+// var router = express.router();
 
+// var router = require('./routes.js');
+var router = express.Router();
+
+// home
+router.get('/', function (req, res) {
+    res.send('Hello World! router ');
+
+});
+app.use('/', router);
 // 1er affichage
-app.get('/', function (req, res) {
-    res.send('Hello World!')
-})
+// app.get('/', function (req, res) {
+//     res.send('Hello World!')
+// })
 
 // Démarrer le serveur 
 app.listen(port, hostname, function(){

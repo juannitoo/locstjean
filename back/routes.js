@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+let locations = require('./locations.js')
 
 // le verbe put crée une entité et il faut la recréer en entier pour la modifier
 // le verbe post crée une entité et permet de n'en modifier qu'une partie
@@ -12,7 +13,11 @@ router.get('/', function (req, res) {
 // API locations
 router.get('/locations', function (req, res) {
     //ici on renvoie les locations présentes dans la base
-    res.json( {loc1: "jon"} );
+    // locations.forEach( (element) => { 
+    //     console.log(element.id);
+    // })
+    res.json(locations)
+    //res.json( {loc1: "jon", loc2: "luis", loc3: "yves"} );
 });
 
 router.put('/locations', function (req, res) {

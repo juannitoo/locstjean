@@ -64,10 +64,12 @@ export class LocationsService implements OnInit, OnDestroy {
   }
 
   getLocationsFromServer () {
+    console.log('marche ou pas ' + Date.now());
     this.httpClient.get<any[]>('http://127.0.0.1:3000/locations')
+    // this.httpClient.get<any[]>('assets/montest.json')
     .subscribe( (response) => {
-      this.locations = response;
       console.log(response);
+      this.locations = response;
       this.emitLocationsSubject();
     },
     (error) => {
@@ -111,7 +113,9 @@ export class LocationsService implements OnInit, OnDestroy {
   }
 
   emitLocationsSubject() {
+    if (this.locations !== undefined) {
     this.locationsSubject.next(this.locations.slice());
+    }
   }
 
   addLocation(location: Location) {

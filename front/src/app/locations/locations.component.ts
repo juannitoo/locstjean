@@ -18,13 +18,15 @@ export class LocationsComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     // this.locations = this.locationsService.locations;
+
     this.locationsSubscription = this.locationsService.locationsSubject.subscribe(
       (locations: any[] ) => {
         this.locations = locations;
       }
     );
-
     this.locationsService.emitLocationsSubject();
+
+    // this.locationsService.getLocationsFromServer();
   }
 
   ngOnDestroy() {

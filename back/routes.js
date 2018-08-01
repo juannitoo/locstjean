@@ -17,7 +17,7 @@ router.get('/locations', function (req, res) {
     //     console.log(element.id);
     // })
     res.json(locations)
-    //res.json( {loc1: "jon", loc2: "luis", loc3: "yves"} );
+    // res.json( {"loc1": "jon", "loc2": "luis", "loc3": "yves"} );
 });
 
 router.put('/locations', function (req, res) {
